@@ -1,4 +1,4 @@
-package com.example.imkotlin
+package com.example.imkotlin.ui.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
