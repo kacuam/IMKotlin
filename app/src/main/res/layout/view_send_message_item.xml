@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/qq_gray_dark"
+            android:layout_gravity="center_horizontal"
+            android:textSize="14sp"
+            android:text="@string/_9_30"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/avatar6"
+                android:layout_margin="8dp"
+                android:layout_alignParentEnd="true" android:contentDescription="@string/self_avatar"/>
+
+        <TextView
+                android:id="@+id/sendMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/avatar"
+                android:text="@string/_hello"
+                android:gravity="center"
+                android:background="@drawable/send_msg_normal"
+                android:padding="5dp"/>
+
+        <ImageView
+                android:id="@+id/sendMessageProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/send_message_progress"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/sendMessage" tools:ignore="ContentDescription"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

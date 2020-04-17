@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_marginBottom="2dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:src="@mipmap/avatar7"/>
+
+        <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:text="@string/ming_zhi"
+                android:layout_toEndOf="@id/avatar"
+                android:layout_alignTop="@id/avatar"/>
+
+        <TextView
+                android:id="@+id/lastMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/last_message"
+                android:textSize="14sp"
+                android:textColor="@color/qq_gray_dark"
+                android:layout_toEndOf="@id/avatar"
+                android:layout_alignBottom="@id/avatar"/>
+
+        <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_1_21"
+                android:textSize="14sp"
+                android:textColor="@color/qq_gray_dark"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/avatar"
+                android:layout_marginEnd="10dp"/>
+
+        <TextView
+                android:id="@+id/unreadCount"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="@string/count_20"
+                android:textSize="10sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_unread_text"
+                android:padding="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignBottom="@id/avatar"
+                android:layout_alignParentEnd="true" tools:ignore="SmallSp"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
