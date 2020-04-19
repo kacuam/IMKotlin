@@ -17,10 +17,10 @@
     <RelativeLayout
             android:id="@+id/rl_userName"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="#fff" >
+            android:background="@drawable/edit_bg" >
 
         <ImageView
                 android:id="@+id/iv_userName"
@@ -50,11 +50,11 @@
     <RelativeLayout
             android:id="@+id/rl_password"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:background="#fff" >
+            android:background="@drawable/edit_bg" >
 
         <ImageView
                 android:id="@+id/iv_password"
@@ -98,7 +98,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="#c3c4c6"
+                android:background="@drawable/btn_register"
                 android:gravity="center"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
@@ -113,7 +113,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="#74dbc9"
+                android:background="@drawable/btn_login"
                 android:gravity="center"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"

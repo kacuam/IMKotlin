@@ -64,24 +64,12 @@ class LoginActivity: BaseActivity(),LoginContract.View{
     override fun getLayoutResId(): Int = R.layout.activity_login
 
     override fun onUserNameError() {
+        //userName.error = getString(R.string.user_name_error)
         val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
             it.setBounds(0,0,50,50)
         }
         userName.run {
-            //userName.error = getString(R.string.user_name_error)
             this.setError(getString(R.string.user_name_error),drawable)
-            /*setOnFocusChangeListener { v, hasFocus ->
-                when {
-                    !this.hasFocus() -> {
-                        iv_userName.visibility = View.GONE
-                        this.setError(getString(R.string.user_name_error),drawable)
-                    }
-                    else -> {
-                        iv_userName.visibility = View.VISIBLE
-                        this.setError(null,null)
-                    }
-                }
-            }*/
         }
     }
 

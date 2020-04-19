@@ -1,5 +1,6 @@
 package com.example.imkotlin.ui.activity
 
+import android.graphics.drawable.Drawable
 import com.example.imkotlin.R
 import com.example.imkotlin.contract.RegisterContract
 import com.example.imkotlin.presenter.RegisterPresenter
@@ -32,15 +33,33 @@ class RegisterActivity: BaseActivity(),RegisterContract.View {
     }
 
     override fun onUserNameError() {
-        userName.error = getString(R.string.user_name_error)
+        //userName.error = getString(R.string.user_name_error)
+        val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
+            it.setBounds(0,0,50,50)
+        }
+        userName.run {
+            this.setError(getString(R.string.user_name_error),drawable)
+        }
     }
 
     override fun onPasswordError() {
-        password.error = getString(R.string.password_error)
+        //password.error = getString(R.string.password_error)
+        val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
+            it.setBounds(0,0,50,50)
+        }
+        password.run {
+            this.setError(getString(R.string.password_error),drawable)
+        }
     }
 
     override fun onConfirmPasswordError() {
-        confirmPassword.error = getString(R.string.confirm_password_error)
+        //confirmPassword.error = getString(R.string.confirm_password_error)
+        val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
+            it.setBounds(0,0,50,50)
+        }
+        confirmPassword.run {
+            this.setError(getString(R.string.confirm_password_error),drawable)
+        }
     }
 
     override fun onStartRegister() {
