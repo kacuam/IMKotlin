@@ -63,6 +63,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="10dp"
+                android:visibility="visible"
                 android:src="@mipmap/em_icon_pwd" android:contentDescription="@string/TODO"/>
 
         <EditText
@@ -103,7 +104,7 @@
                 android:paddingTop="7dp"
                 android:text="@string/register"
                 android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp" tools:ignore="ButtonStyle"/>
 
         <Button
                 android:id="@+id/login"
@@ -118,7 +119,7 @@
                 android:paddingTop="7dp"
                 android:text="@string/login_register"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"/>
+                android:textSize="18sp" tools:ignore="ButtonStyle"/>
     </LinearLayout>
 
     <!--<EditText

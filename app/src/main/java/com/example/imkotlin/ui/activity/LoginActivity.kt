@@ -2,7 +2,11 @@ package com.example.imkotlin.ui.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
 import android.support.v4.app.ActivityCompat
+import android.text.Html
+import android.view.View
+import android.view.View.OnFocusChangeListener
 import com.example.imkotlin.R
 import com.example.imkotlin.contract.LoginContract
 import com.example.imkotlin.presenter.LoginPresenter
@@ -60,11 +64,35 @@ class LoginActivity: BaseActivity(),LoginContract.View{
     override fun getLayoutResId(): Int = R.layout.activity_login
 
     override fun onUserNameError() {
-        userName.error = getString(R.string.user_name_error)
+        val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
+            it.setBounds(0,0,50,50)
+        }
+        userName.run {
+            //userName.error = getString(R.string.user_name_error)
+            this.setError(getString(R.string.user_name_error),drawable)
+            /*setOnFocusChangeListener { v, hasFocus ->
+                when {
+                    !this.hasFocus() -> {
+                        iv_userName.visibility = View.GONE
+                        this.setError(getString(R.string.user_name_error),drawable)
+                    }
+                    else -> {
+                        iv_userName.visibility = View.VISIBLE
+                        this.setError(null,null)
+                    }
+                }
+            }*/
+        }
     }
 
     override fun onPasswordError() {
-        password.error = getString(R.string.password_error)
+        //password.error = getString(R.string.password_error)
+        val drawable: Drawable = resources.getDrawable(R.mipmap.em_login_error_icon).also {
+            it.setBounds(0,0,50,50)
+        }
+        password.run {
+            this.setError(getString(R.string.password_error),drawable)
+        }
     }
 
     override fun onStartLogin() {
