@@ -11,7 +11,7 @@
     <string name="message">消息</string>
     <string name="contact">联系人</string>
     <string name="dynamic">动态</string>
-    <string name="logout">退(%s)出</string>
+    <string name="logout">退出%s</string>
     <string name="logouting">正在退出…</string>
     <string name="logout_failed">退出失败</string>
     <string name="load_contacts_failed">加载联系人失败</string>
@@ -31,7 +31,7 @@
     <string name="delete_friend_success">删除好友成功</string>
     <string name="cancel">取消</string>
     <string name="send">发送</string>
-    <string name="chat_title">与%s聊天中</string>
+    <string name="chat_title">%s</string>
     <string name="send_message_failed">发送消息失败</string>
     <string name="send_message_success">发送消息成功</string>
     <string name="no_text_message">非文本消息</string>

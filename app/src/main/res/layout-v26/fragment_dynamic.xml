@@ -19,12 +19,12 @@
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="350dp"
             android:layout_marginHorizontal="30dp"
             android:textAllCaps="false"
             android:background="@drawable/btn_logout"
             android:text="@string/logout"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@android:color/white"/>
 
 </LinearLayout>

@@ -11,7 +11,7 @@
             android:layout_margin="5dp"
             android:textColor="@color/qq_gray_dark"
             android:layout_gravity="center_horizontal"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:text="@string/_9_30"/>
 
     <RelativeLayout

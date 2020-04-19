@@ -3,12 +3,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@color/Christmas">
+                android:background="@color/log_res_bg">
 
     <ImageView
-            android:layout_width="330dp"
-            android:layout_height="505dp"
-            android:src="@mipmap/ic_funchat2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@mipmap/chat"
             android:layout_centerInParent="true"/>
 
 </RelativeLayout>

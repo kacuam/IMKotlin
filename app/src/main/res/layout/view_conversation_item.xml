@@ -19,7 +19,8 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
                 android:textColor="@android:color/black"
                 android:text="@string/ming_zhi"
                 android:layout_toEndOf="@id/avatar"
@@ -29,9 +30,9 @@
                 android:id="@+id/lastMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="@string/last_message"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textColor="@color/qq_gray_dark"
                 android:layout_toEndOf="@id/avatar"
                 android:layout_alignBottom="@id/avatar"/>
@@ -49,8 +50,8 @@
 
         <TextView
                 android:id="@+id/unreadCount"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:gravity="center"
                 android:text="@string/count_20"
                 android:textSize="10sp"

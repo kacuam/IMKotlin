@@ -28,26 +28,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:textSize="20sp"
                     android:text="@string/aaaa"/>
 
             <TextView
                     android:id="@+id/timestamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="13sp"
                     android:text="@string/_2019_11_27"/>
 
         </LinearLayout>
 
         <Button
                 android:id="@+id/add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
                 android:textSize="18sp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_margin="5dp"
-                android:text="@string/add"/>
+                android:layout_margin="10dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_add_friend"/>
 
     </RelativeLayout>
 

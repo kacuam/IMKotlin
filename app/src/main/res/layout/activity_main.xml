@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:bb_tabXmlResource="@xml/bottombor_tabs"
-            app:bb_activeTabColor="@color/qq_blue">
+            app:bb_activeTabColor="@color/btn_green">
     </com.roughike.bottombar.BottomBar>
 
 </LinearLayout>
