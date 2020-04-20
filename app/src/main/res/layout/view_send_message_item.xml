@@ -26,15 +26,41 @@
                 android:layout_margin="8dp"
                 android:layout_alignParentEnd="true" android:contentDescription="@string/self_avatar"/>
 
-        <TextView
+        <RelativeLayout
+                android:id="@+id/bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/avatar"
+                android:background="@drawable/chat_to_bg">
+
+            <TextView
+                    android:id="@+id/sendMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:text="@string/_hello"
+                    android:padding="8dp"
+                    android:minHeight="38dp"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="#000000"
+                    android:maxWidth="225dp"
+                    android:textSize="18sp" tools:ignore="RtlHardcoded"/>
+        </RelativeLayout>
+
+<!--        <TextView
                 android:id="@+id/sendMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@id/avatar"
+                android:layout_centerVertical="true"
                 android:text="@string/_hello"
                 android:gravity="center"
-                android:background="@drawable/send_msg_normal"
-                android:padding="5dp"/>
+                android:background="@drawable/chat_to_bg"
+                android:padding="5dp"/>-->
 
         <ImageView
                 android:id="@+id/sendMessageProgress"
@@ -42,7 +68,8 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/send_message_progress"
                 android:layout_centerVertical="true"
-                android:layout_toStartOf="@id/sendMessage" tools:ignore="ContentDescription"/>
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/bubble" tools:ignore="ContentDescription"/>
 
     </RelativeLayout>
 

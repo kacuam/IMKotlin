@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
@@ -26,7 +26,32 @@
                 android:layout_margin="8dp"
                 android:layout_alignParentStart="true" android:contentDescription="@string/self_avatar"/>
 
-        <TextView
+        <RelativeLayout
+                android:id="@+id/bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/avatar"
+                android:background="@drawable/chat_from_bg">
+
+            <TextView
+                    android:id="@+id/receiveMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|left"
+                    android:text="@string/_hello"
+                    android:padding="8dp"
+                    android:minHeight="38dp"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="#000000"
+                    android:maxWidth="225dp"
+                    android:textSize="18sp" tools:ignore="RtlHardcoded"/>
+        </RelativeLayout>
+
+<!--        <TextView
                 android:id="@+id/receiveMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +59,7 @@
                 android:text="@string/_hello"
                 android:gravity="center"
                 android:background="@drawable/receive_msg_normal"
-                android:padding="5dp"/>
+                android:padding="5dp"/>-->
 
     </RelativeLayout>
 

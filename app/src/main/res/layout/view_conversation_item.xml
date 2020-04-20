@@ -28,9 +28,10 @@
 
         <TextView
                 android:id="@+id/lastMessage"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:singleLine="true"
                 android:text="@string/last_message"
                 android:textSize="15sp"
                 android:textColor="@color/qq_gray_dark"
