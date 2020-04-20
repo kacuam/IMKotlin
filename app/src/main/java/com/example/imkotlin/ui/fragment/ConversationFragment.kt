@@ -1,15 +1,19 @@
 package com.example.imkotlin.ui.fragment
 
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.example.imkotlin.R
 import com.example.imkotlin.adapter.ConversationListAdapter
 import com.example.imkotlin.adapter.EMMessageListenerAdapter
+import com.example.imkotlin.ui.activity.GroupPickContactsActivity
 import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMConversation
 import com.hyphenate.chat.EMMessage
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.header.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.uiThread
 
 //会话界面布局
@@ -29,10 +33,12 @@ class ConversationFragment: BaseFragment() {
     override fun init() {
         super.init()
         headerTitle.text = getString(R.string.message)
+        group_pick.visibility = View.VISIBLE
+        group_pick.setOnClickListener { context?.startActivity<GroupPickContactsActivity>() }
 
         recyclerView.apply {
             hasFixedSize()
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context) as RecyclerView.LayoutManager?
             adapter = ConversationListAdapter(context, conversations)
         }
 

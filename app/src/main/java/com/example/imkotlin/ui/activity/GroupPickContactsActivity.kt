@@ -1,27 +1,26 @@
-package com.example.imkotlin.ui.fragment
+package com.example.imkotlin.ui.activity
 
+import android.annotation.SuppressLint
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import cn.bmob.v3.util.V
 import com.example.imkotlin.R
-import com.example.imkotlin.adapter.ContactListAdapter
 import com.example.imkotlin.adapter.EMContactListenerAdapter
-import com.example.imkotlin.contract.ContactContract
-import com.example.imkotlin.presenter.ContactPresenter
-import com.example.imkotlin.ui.activity.AddFriendActivity
+import com.example.imkotlin.adapter.GroupPickContactsAdapter
+import com.example.imkotlin.contract.GroupPickContactsContract
+import com.example.imkotlin.presenter.GroupPickContactsPresenter
 import com.example.imkotlin.widget.SlideBar
 import com.hyphenate.chat.EMClient
-import kotlinx.android.synthetic.main.fragment_contacts.*
+import kotlinx.android.synthetic.main.activity_group_pick_contacts.*
 import kotlinx.android.synthetic.main.header.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-//联系人界面的View层
-class ContactFragment : BaseFragment() ,ContactContract.View{
+@SuppressLint("Registered")
+class GroupPickContactsActivity : BaseActivity(),GroupPickContactsContract.View{
 
-    override fun getLayoutResId(): Int = R.layout.fragment_contacts
+    override fun getLayoutResId(): Int = R.layout.activity_group_pick_contacts
 
-    val presenter = ContactPresenter(this)
+    val presenter = GroupPickContactsPresenter(this)
 
     val contactListener = object : EMContactListenerAdapter(){
 
@@ -42,7 +41,7 @@ class ContactFragment : BaseFragment() ,ContactContract.View{
         initSwipeRreshLayout()
         initRecyclerView()
         //监听好友状态事件,这里不应该是在model层通过主线程回调
-        EMClient.getInstance().contactManager().setContactListener(contactListener)  //setContactListener()里通过add方法添加到监听器集合，需要在销毁时解除出去，在onDestroy()方法执行
+        EMClient.getInstance().contactManager().setContactListener(contactListener)
         initSlideBar()
         //加载好友列表
         presenter.loadContacts()
@@ -57,7 +56,7 @@ class ContactFragment : BaseFragment() ,ContactContract.View{
                 section.visibility = View.VISIBLE
                 section.text = firstLetter
                 //RecycleView跟随滚动，在可视范围内position对应的是recyclerView里的每个contactListItem
-                recyclerView.smoothScrollToPosition(index)//getPosition(firstLetter)
+                recyclerView.smoothScrollToPosition(index)
             }
 
             override fun onSlideFinish() {
@@ -71,11 +70,10 @@ class ContactFragment : BaseFragment() ,ContactContract.View{
         recyclerView.apply {
             setHasFixedSize(true) //确保尺寸是通过用户输入,RecyclerView的尺寸为一个常数,避免尺寸改变浪费性能资源
             layoutManager = LinearLayoutManager(context)
-            adapter = ContactListAdapter(
+            adapter = GroupPickContactsAdapter(
                 context,
                 presenter.contactListItems
-            ) //ContactFragment -> ContactListAdapter -> ContactListItemView
-                        //(contactListItems)
+            )
         }
     }
 
@@ -93,31 +91,26 @@ class ContactFragment : BaseFragment() ,ContactContract.View{
 
     private fun initHeader() {
         headerTitle.text = getString(R.string.contact)
-        //在header里的add(ImageView)改为显示
-        add.visibility = View.VISIBLE
-        add.setOnClickListener { context?.startActivity<AddFriendActivity>() }
+        confirm.visibility = View.VISIBLE
+//        confirm.setOnClickListener { startActivity<AddFriendActivity>() }
+        back.visibility = View.VISIBLE
+        back.setOnClickListener { finish() }
     }
-
-    private fun getPosition(firstLetter: String): Int =
-        presenter.contactListItems.binarySearch {
-            //二分查找下标
-            contactListItem -> contactListItem.firstLetter.minus(firstLetter[0]) //firstLetter加入[0]变为Char类型
-            //minus是减的意思，这里比如contactListItem.firstLetter=a减firstLetter[0]=c为-2，所以在a+2上找到c返回c的postion
-        }
 
     override fun onLoadContactsSuccess() {
         swipeRefreshLayout.isRefreshing = false
-        recyclerView.adapter?.notifyDataSetChanged() //通知recyclerView更新列表，notifyDataSetChanged()是通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 
     override fun onLoadContactsFaild() {
         swipeRefreshLayout.isRefreshing = false
-        context?.toast(R.string.load_contacts_failed)
+        toast(R.string.load_contacts_failed)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         EMClient.getInstance().contactManager().removeContactListener(contactListener)
     }
+
 
 }

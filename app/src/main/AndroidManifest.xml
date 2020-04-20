@@ -50,6 +50,7 @@
         <activity android:name=".ui.activity.ChatActivity"
                   android:parentActivityName=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.AddFriendActivity"/>
+        <activity android:name=".ui.activity.GroupPickContactsActivity"/>
 
         <!-- 设置环信应用的AppKey 同步AppKey就不会报错了-->
         <meta-data android:name="EASEMOB_APPKEY" android:value="1126191118019696#kochat"/>

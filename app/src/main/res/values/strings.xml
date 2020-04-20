@@ -63,4 +63,5 @@
     <string name="count_20">20</string>
     <string name="relogin">设备在其他地方登录，需要重新登录</string>
     <string name="TODO">TODO</string>
+    <string name="access_to_groups">确认进入群组</string>
 </resources>

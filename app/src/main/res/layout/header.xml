@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@color/btn_green"
                 android:fitsSystemWindows="true">
@@ -25,13 +25,35 @@
 
     <ImageView
             android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="15dp"
             android:src="@drawable/add_friend_selector"
             android:visibility="gone"
             android:contentDescription="@string/add_friend_check"/>
+
+    <ImageView
+            android:id="@+id/confirm"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/confiem_groud"
+            android:visibility="gone"
+            android:contentDescription="@string/access_to_groups"/>
+
+    <ImageView
+            android:id="@+id/group_pick"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/group_pick"
+            android:visibility="gone"
+            android:contentDescription="@string/access_to_groups"/>
 
 </RelativeLayout>

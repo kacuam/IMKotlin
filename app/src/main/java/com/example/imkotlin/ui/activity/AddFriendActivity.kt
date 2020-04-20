@@ -2,6 +2,7 @@ package com.example.imkotlin.ui.activity
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.example.imkotlin.R
 import com.example.imkotlin.adapter.AddFriendListAdapter
 import com.example.imkotlin.contract.AddFriendContact
@@ -20,6 +21,8 @@ class AddFriendActivity : BaseActivity() ,AddFriendContact.View{
     override fun init() {
         super.init()
         headerTitle.text = getString(R.string.add_friend)
+        back.visibility = View.VISIBLE
+        back.setOnClickListener { finish() }
 
         recyclerView.apply {
             setHasFixedSize(true)  //设置固定大小
